@@ -10,6 +10,9 @@ func TestEmpty(t *testing.T) {
 	tree := New[int]()
 
 	assert.Equal(t, 0, tree.Size())
+
+	assert.Nil(t, tree.Root())
+	assert.Nil(t, tree.Root().Parent())
 }
 
 func TestInsertRoot(t *testing.T) {
@@ -24,6 +27,7 @@ func TestInsertRoot(t *testing.T) {
 	root := tree.Root()
 
 	assert.Equal(t, insertedVal, root.Value())
+	assert.Nil(t, tree.Root().Parent())
 }
 
 func TestInsertSmallerValue(t *testing.T) {
@@ -44,6 +48,7 @@ func TestInsertSmallerValue(t *testing.T) {
 	assert.NotNil(t, tree.Root().Left())
 	assert.Nil(t, tree.Root().Right())
 	assert.Equal(t, insertedVal, tree.Root().Left().Value())
+	assert.Equal(t, tree.Root(), tree.Root().Left().Parent())
 }
 
 func TestInsertLargerValue(t *testing.T) {

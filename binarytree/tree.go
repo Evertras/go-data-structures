@@ -24,7 +24,7 @@ func New[T constraints.Ordered]() Tree[T] {
 
 func (t *Tree[T]) Insert(val T) {
 	if t.root == nil {
-		t.root = newNode(val)
+		t.root = newNode(nil, val)
 		return
 	}
 
