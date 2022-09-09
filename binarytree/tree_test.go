@@ -1,4 +1,4 @@
-package avltree
+package binarytree
 
 import (
 	"testing"

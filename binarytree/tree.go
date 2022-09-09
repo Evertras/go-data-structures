@@ -1,4 +1,4 @@
-package avltree
+package binarytree
 
 import "golang.org/x/exp/constraints"
 
