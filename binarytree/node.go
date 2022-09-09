@@ -21,6 +21,10 @@ func (n *Node[T]) Value() T {
 	return n.val
 }
 
+func (n *Node[T]) Size() int {
+	return n.size
+}
+
 func (n *Node[T]) Left() *Node[T] {
 	return n.left
 }

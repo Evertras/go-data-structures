@@ -107,4 +107,6 @@ func TestMultipleLevels(t *testing.T) {
 	assert.Nil(t, tree.Root().Right())
 	assert.Equal(t, smallerVal, tree.Root().Left().Value())
 	assert.Equal(t, midVal, tree.Root().Left().Right().Value())
+
+	assert.Equal(t, 2, tree.Root().Left().Size())
 }

@@ -11,7 +11,7 @@ func (t *Tree[T]) Size() int {
 		return 0
 	}
 
-	return t.root.size
+	return t.root.Size()
 }
 
 func New[T constraints.Ordered]() Tree[T] {
