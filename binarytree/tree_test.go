@@ -38,6 +38,7 @@ func TestInsertSmallerValue(t *testing.T) {
 	tree.Insert(insertedVal)
 
 	assert.Equal(t, 2, tree.Size())
+	assert.Equal(t, 2, tree.Height())
 
 	assert.Equal(t, rootVal, tree.Root().Value())
 	assert.NotNil(t, tree.Root().Left())
@@ -57,6 +58,7 @@ func TestInsertLargerValue(t *testing.T) {
 	tree.Insert(insertedVal)
 
 	assert.Equal(t, 2, tree.Size())
+	assert.Equal(t, 2, tree.Height())
 
 	assert.Equal(t, rootVal, tree.Root().Value())
 	assert.NotNil(t, tree.Root().Right())
@@ -78,6 +80,7 @@ func TestInsertBothSmallerAndLarger(t *testing.T) {
 	tree.Insert(largerVal)
 
 	assert.Equal(t, 3, tree.Size())
+	assert.Equal(t, 2, tree.Height())
 
 	assert.Equal(t, rootVal, tree.Root().Value())
 	assert.NotNil(t, tree.Root().Right())
@@ -100,6 +103,7 @@ func TestMultipleLevels(t *testing.T) {
 	tree.Insert(midVal)
 
 	assert.Equal(t, 3, tree.Size())
+	assert.Equal(t, 3, tree.Height())
 
 	assert.Equal(t, rootVal, tree.Root().Value())
 	assert.NotNil(t, tree.Root().Left())

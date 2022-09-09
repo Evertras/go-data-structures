@@ -14,6 +14,10 @@ func (t *Tree[T]) Size() int {
 	return t.root.Size()
 }
 
+func (t *Tree[T]) Height() int {
+	return t.root.Height()
+}
+
 func New[T constraints.Ordered]() Tree[T] {
 	return Tree[T]{}
 }
