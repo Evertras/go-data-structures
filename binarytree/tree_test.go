@@ -92,7 +92,7 @@ func TestMultipleLevels(t *testing.T) {
 	const (
 		rootVal    = 3
 		smallerVal = 1
-		midVal  = 2
+		midVal     = 2
 	)
 
 	tree.Insert(rootVal)

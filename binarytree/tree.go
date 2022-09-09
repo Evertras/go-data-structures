@@ -24,9 +24,9 @@ func (t *Tree[T]) Insert(val T) {
 		return
 	}
 
-    t.root.insert(val)
+	t.root.insert(val)
 }
 
 func (t *Tree[T]) Root() *Node[T] {
-    return t.root
+	return t.root
 }
