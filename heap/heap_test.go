@@ -6,6 +6,16 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+func TestHeapEmpty(t *testing.T) {
+	h := NewMinHeap[int]()
+
+	assert.True(t, h.IsEmpty())
+
+	h.Insert(3)
+
+	assert.False(t, h.IsEmpty())
+}
+
 func TestHeapInsert(t *testing.T) {
 	h := NewMinHeap[int]()
 
@@ -33,16 +43,6 @@ func TestHeapInsert(t *testing.T) {
 	h.Insert(1)
 
 	assert.Equal(t, 1, h.Top())
-}
-
-func TestHeapEmpty(t *testing.T) {
-	h := NewMinHeap[int]()
-
-	assert.True(t, h.IsEmpty())
-
-	h.Insert(3)
-
-	assert.False(t, h.IsEmpty())
 }
 
 func BenchmarkHeapify10k(b *testing.B) {
