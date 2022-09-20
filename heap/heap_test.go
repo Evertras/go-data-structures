@@ -45,7 +45,7 @@ func TestHeapInsert(t *testing.T) {
 	assert.Equal(t, 1, h.Top())
 }
 
-func TestHeapDelete(t *testing.T) {
+func TestHeapPop(t *testing.T) {
 	h := NewMinHeap[int]()
 
 	h.Insert(3)
