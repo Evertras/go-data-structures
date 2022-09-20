@@ -70,6 +70,25 @@ func TestHeapPop(t *testing.T) {
 	assert.Equal(t, 2, h.Pop())
 	assert.Equal(t, 3, h.Pop())
 	assert.Equal(t, 4, h.Pop())
+
+	h = NewMinHeap[int]()
+
+	// Go nuts
+	for i := 1; i <= 1000; i++ {
+		h.Insert(i)
+	}
+
+	last := h.Pop()
+
+	for !h.IsEmpty() {
+		next := h.Pop()
+		assert.GreaterOrEqual(t, next, last)
+		last = next
+
+		if t.Failed() {
+			return
+		}
+	}
 }
 
 func BenchmarkHeapify10k(b *testing.B) {

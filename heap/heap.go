@@ -81,9 +81,9 @@ func (h *Heap[T]) Pop() T {
 	}
 
 	popped := h.vals[0]
-
 	h.vals[0] = h.vals[len(h.vals)-1]
 	h.vals = h.vals[:len(h.vals)-1]
+
 	h.heapify(0)
 
 	return popped
