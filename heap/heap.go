@@ -74,6 +74,21 @@ func (h *Heap[T]) Top() T {
 	return h.vals[0]
 }
 
+func (h *Heap[T]) Pop() T {
+	if len(h.vals) == 0 {
+		// A bit scary but WAY cleaner API this way for testing/funsies
+		panic("heap is empty")
+	}
+
+	popped := h.vals[0]
+
+	h.vals[0] = h.vals[len(h.vals)-1]
+	h.vals = h.vals[:len(h.vals)-1]
+	h.heapify(0)
+
+	return popped
+}
+
 func (h *Heap[T]) IsEmpty() bool {
 	return len(h.vals) == 0
 }
